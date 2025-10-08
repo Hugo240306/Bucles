@@ -2,16 +2,21 @@ import java.util.Scanner;
 
 public class prueba1 {
     public static void main(String[] args) {
-        System.out.println("Introduce la velocidad actual de tu coche (km/h : " );
         Scanner sc = new Scanner(System.in);
+        System.out.print("Introduce la velocidad actual de tu coche (km/h): ");
         int velocidad = sc.nextInt();
-        boolean ExcesoVelocidad = velocidad>120;
-        if(ExcesoVelocidad){
-            System.out.println("Reduce la velocidad actual de tu coche");
+        boolean esExcesoVelocidad = false;
+        if (velocidad > 120) {
+            esExcesoVelocidad = true;
+        } else {
+            esExcesoVelocidad = false;
         }
-        else{
-            System.out.println("Velocidad correcta");
+        if (esExcesoVelocidad == true) {
+            System.out.println("¡Atención! Vas a una velocidad excesiva. ¡Riesgo de multa!");
+        } else {
+            System.out.println("Velocidad adecuada. ¡Sigue así y conduce con seguridad!");
         }
+        sc.close();
     }
 }
 
